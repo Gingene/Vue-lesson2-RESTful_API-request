@@ -25,6 +25,15 @@ const app = createApp({
       }
     },
   },
+  mounted() {
+    const token = document.cookie.replace(
+      /(?:(?:^|.*;\s*)hexToken\s*=\s*([^;]*).*$)|^.*$/,
+      "$1"
+    );
+    if (token) {
+      location.href = "product.html";
+    }
+  },
 });
 
 app.mount("#app");
